@@ -1,0 +1,6 @@
+@OmniReserve.Infrastructure_HostAddress = http://localhost:5252
+
+GET {{OmniReserve.Infrastructure_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
