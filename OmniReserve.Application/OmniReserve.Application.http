@@ -1,6 +1,0 @@
-@OmniReserve.Application_HostAddress = http://localhost:5234
-
-GET {{OmniReserve.Application_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
