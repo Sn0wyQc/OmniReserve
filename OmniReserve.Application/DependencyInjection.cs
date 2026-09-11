@@ -5,8 +5,9 @@ namespace OmniReserve.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddApplication()
+    public static IServiceCollection AddApplication(this IServiceCollection services)
     {
+        // Se registra MediatR
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
         return services;
     }
