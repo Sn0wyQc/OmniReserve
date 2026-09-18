@@ -1,4 +1,7 @@
-﻿namespace OmniReserve.Application.Rooms.Commands.CreateRoom;
+﻿using MediatR;
+using OmniReserve.Domain;
+
+namespace OmniReserve.Application.Rooms.Commands.CreateRoom;
 
 public class CreateRoomCommandHandler : IRequestHandler<CreateRoomCommand, Guid>
 {
