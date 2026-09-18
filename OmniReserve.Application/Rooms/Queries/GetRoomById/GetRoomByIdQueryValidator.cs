@@ -10,6 +10,5 @@ public class GetRoomByIdQueryValidator : AbstractValidator<GetRoomByIdQuery>
         RuleFor(x => x.RoomId)
             .NotEmpty()
             .WithMessage("El identificador de la habitación es obligatorio.");
-            //. 
     }
 }
