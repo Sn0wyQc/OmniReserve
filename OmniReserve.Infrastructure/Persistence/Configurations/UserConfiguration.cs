@@ -16,8 +16,12 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(100);
 
-        builder.Property(u => u.FullName)
+        builder.Property(u => u.FirstName)
             .IsRequired()
-            .HasMaxLength(150);
+            .HasMaxLength(75);
+
+        builder.Property(u => u.LastName)
+            .IsRequired()
+            .HasMaxLength(75);
     }
 }

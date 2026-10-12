@@ -1,5 +1,4 @@
-﻿namespace OmniReserve.Domain;
-
+﻿namespace OmniReserve.Domain.Entities;
 public class Room
 {
     public Guid Id {get; private set; }

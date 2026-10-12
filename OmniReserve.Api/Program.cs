@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 // Llama a los métodos de extensión para inyectar las dependencias de otras capas
 builder.Services.AddApplication();
-builder.Services.AddInfrastructure(); 
+builder.Services.AddInfrastructure(builder.Configuration);
 
 var app = builder.Build();
 
