@@ -1,7 +1,6 @@
 ﻿using System.Dynamic;
 
-namespace OmniReserve.Domain;
-
+namespace OmniReserve.Domain.Entities;
 public class User
 {
     public Guid Id {get; private set; }

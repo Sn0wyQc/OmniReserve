@@ -1,5 +1,4 @@
-using OmniReserve.Domain;
-
+using OmniReserve.Domain.Entities;
 namespace OmniReserve.Application.Common.Interfaces;
 
 public interface IRoomRepository
