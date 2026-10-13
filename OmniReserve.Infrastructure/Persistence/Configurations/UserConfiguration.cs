@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using OmniReserve.Domain.Entities;
+using OmniReserve.Domain.ValueObjects;
 
 namespace OmniReserve.Infrastructure.Persistence.Configurations;
 
@@ -23,5 +24,17 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(u => u.LastName)
             .IsRequired()
             .HasMaxLength(75);
+        
+        builder.Property(user => user.Email)
+               .HasConversion(
+                   emailObj => emailObj.Value, 
+                   emailStr => new EmailAddress(emailStr) 
+               )
+               .HasColumnName("Email") 
+               .HasMaxLength(255)
+               .IsRequired();
+
+        builder.HasIndex(user => user.Email)
+               .IsUnique();
     }
 }
