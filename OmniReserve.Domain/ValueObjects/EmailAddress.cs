@@ -18,5 +18,7 @@ public record EmailAddress
 
         Value = value;
     }
-    
+
+    // Opcional: Sobrescribir ToString para facilitar la lectura en consola
+    public override string ToString() => Value;
 }
