@@ -25,14 +25,16 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired()
             .HasMaxLength(75);
         
-                // Value Conversion: El puente entre el Dominio complejo y la BD simple
         builder.Property(user => user.Email)
                .HasConversion(
-                   emailObj => emailObj.Value, // Cómo grabar (C# a SQL)
-                   emailStr => new EmailAddress(emailStr) // Cómo leer (SQL a C#)
+                   emailObj => emailObj.Value, 
+                   emailStr => new EmailAddress(emailStr) 
                )
-               .HasColumnName("Email") // Fuerza el nombre de la columna en la BD
+               .HasColumnName("Email") 
                .HasMaxLength(255)
                .IsRequired();
+
+        builder.HasIndex(user => user.Email)
+               .IsUnique();
     }
 }
