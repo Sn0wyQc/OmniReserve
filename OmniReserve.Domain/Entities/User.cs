@@ -6,12 +6,12 @@ public class User
     public Guid Id {get; private set; }
     public string FirstName {get; private set;}
     public string LastName {get; private set;}
-    public string Email {get; private set; }
+    public EmailAddress Email { get; private set; }
     public string PaswordHash {get; private set; }
     public Role Role {get; private set; }
     public ICollection<Reservation> Reservations { get; private set; } = new List<Reservation>();
     
-    public User(string firstName, string lastName, string email, string paswordHash, Role role)
+    public User(string firstName, string lastName, EmailAddress email, string paswordHash, Role role)
     {
         if(string.IsNullOrWhiteSpace(firstName))
         throw new ArgumentNullException(nameof(firstName), "El nombre no puede estar vacio.");
