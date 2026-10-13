@@ -1,0 +1,1 @@
+Hola profe me había faltado el readme, todavía no sé que poner pero la siguiente clase lo actualizo bien.
